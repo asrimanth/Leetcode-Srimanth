@@ -7,5 +7,5 @@ class Solution(object):
         # Use XOR
         result = 0
         for num in nums:
-            result = result ^ num
+            result ^= num
         return result
