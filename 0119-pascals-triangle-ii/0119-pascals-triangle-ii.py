@@ -4,6 +4,7 @@ class Solution(object):
         :type rowIndex: int
         :rtype: List[int]
         """
+        # Previous solution
         triangle = [[1]]
         for i in range(1, rowIndex+1):
             binomial_row = [triangle[i-1][0]]
