@@ -7,6 +7,6 @@ class Solution(object):
         :rtype: bool
         """
         # Count sort
-        s_count = dict(Counter(s))
-        t_count = dict(Counter(t))
+        s_count = Counter(s)
+        t_count = Counter(t)
         return s_count == t_count
