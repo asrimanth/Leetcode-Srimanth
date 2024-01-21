@@ -4,15 +4,18 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+from collections import deque
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
         # DFS
-        fringe = [(root, 1)]
+        fringe = deque([(root, 1)])
         min_depth = 9999
         if root is None:
             return 0
+
         while len(fringe) != 0:
-            curr, depth = fringe.pop() # DFS
+            curr, depth = fringe.popleft() #BFS
+            # curr, depth = fringe.pop() # DFS
             if curr.left is None and curr.right is None:
                 min_depth = min(depth, min_depth)
             if curr.left is not None:
