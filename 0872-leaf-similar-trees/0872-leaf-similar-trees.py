@@ -19,6 +19,6 @@ class Solution:
         leaf_seq_2 = []
         preorder_traversal(root1, leaf_seq_1)
         preorder_traversal(root2, leaf_seq_2)
-        
+
         return leaf_seq_1 == leaf_seq_2
         
