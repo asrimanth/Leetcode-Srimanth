@@ -6,6 +6,8 @@
 #         self.right = right
 class Solution:
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
+        
+        # Since leaf nodes are in a left-to-right sequence, consider Preorder traversal
         def preorder_traversal(node, leaf_sequence):
             if not node:
                 return leaf_sequence
@@ -21,4 +23,3 @@ class Solution:
         preorder_traversal(root2, leaf_seq_2)
 
         return leaf_seq_1 == leaf_seq_2
-        
