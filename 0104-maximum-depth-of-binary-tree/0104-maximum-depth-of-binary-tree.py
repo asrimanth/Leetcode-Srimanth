@@ -13,7 +13,7 @@ class Solution:
         fringe = [(root, 1)]
         max_depth = -99999
         while len(fringe) != 0:
-            curr, depth = fringe.pop() # BFS
+            curr, depth = fringe.pop() # DFS
             # curr, depth = fringe.popleft() # BFS
             if curr.left is None and curr.right is None:
                 max_depth = max(depth, max_depth)
