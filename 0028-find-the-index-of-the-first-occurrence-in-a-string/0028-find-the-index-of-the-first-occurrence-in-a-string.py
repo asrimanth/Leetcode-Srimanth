@@ -1,3 +1,6 @@
+# Time complexity: O(n)
+# Space complexity: O(1)
+
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         n_len, h_len = len(needle), len(haystack)
