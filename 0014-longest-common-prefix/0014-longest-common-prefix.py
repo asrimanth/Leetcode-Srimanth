@@ -1,7 +1,9 @@
+# Time complexity: O(nlogn)
+# Space complexity: O(1)
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        data = sorted(strs)
-        first, last = data[0], data[-1]
+        strs = sorted(strs)
+        first, last = strs[0], strs[-1]
         result = ""
         length = min(len(first), len(last))
         for i in range(length):
