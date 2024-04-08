@@ -9,7 +9,7 @@ from collections import deque
 class Solution:
     def maxDepth(self, root: 'Node') -> int:
         max_depth = 1
-        if root is None or len(root)==0 :
+        if root is None:
             return 0
         fringe = deque([(max_depth, root)])
         while len(fringe) != 0:
