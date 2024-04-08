@@ -5,6 +5,8 @@ class Node:
         self.val = val
         self.children = children
 """
+# Time Complexity: O(C+(C-1)) = O(C)
+# Space Complexity: O(C)
 from collections import deque
 class Solution:
     def maxDepth(self, root: 'Node') -> int:
