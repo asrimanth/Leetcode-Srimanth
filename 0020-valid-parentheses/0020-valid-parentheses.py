@@ -1,15 +1,17 @@
+# Time complexity: O(n)
+# Space complexity: O(n)
 class Solution:
     def isValid(self, s: str) -> bool:
+        mapping = {"(": ")", "{": "}", "[": "]"}
         stack = []
-        pairs = {"(" : ")", "[" : "]", "{" : "}"}
         for char in s:
-            if char in pairs.keys():
+            if char in mapping.keys():
                 stack.append(char)
-            if char in pairs.values():
+            else:
                 if len(stack) == 0:
                     return False
                 latest = stack.pop()
-                if char != pairs[latest]:
+                if char != mapping[latest]:
                     return False
         
-        return True if len(stack) == 0 else False
+        return True if len(stack)==0 else False
