@@ -1,5 +1,8 @@
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # Hash map approach
         hash_map = dict()
 
         for i, num in enumerate(nums):
