@@ -7,8 +7,7 @@ impl Solution {
         let mut hash_map = HashMap::new();
 
          for (i, num) in nums.iter().enumerate() {
-            let complement = target - num;
-            if let Some(&index) = hash_map.get(&complement) {
+            if let Some(&index) = hash_map.get(&(target - num)) {
                 return vec![index as i32, i as i32];
             }
             hash_map.insert(*num, i);
