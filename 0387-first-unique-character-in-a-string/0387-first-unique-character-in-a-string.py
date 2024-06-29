@@ -1,3 +1,6 @@
+# Time Complexity: O(n)
+# Space Complexity: O(n)
+
 from collections import defaultdict
 class Solution:
     def firstUniqChar(self, s: str) -> int:
