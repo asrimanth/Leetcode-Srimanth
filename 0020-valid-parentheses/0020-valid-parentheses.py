@@ -1,5 +1,5 @@
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(N)
+# Space complexity: O(N)
 class Solution:
     def isValid(self, s: str) -> bool:
         mapping = {"(": ")", "{": "}", "[": "]"}
@@ -13,5 +13,5 @@ class Solution:
                 latest = stack.pop()
                 if char != mapping[latest]:
                     return False
-        
+
         return len(stack)==0
