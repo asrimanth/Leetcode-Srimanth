@@ -1,3 +1,6 @@
+# Time Complexity: O(len(t))
+# Space Complexity: O(len(t))
+# Since 1 <= s.length, t.length <= 5 * 10^4 is a given constraint
 from collections import Counter
 class Solution(object):
     def isAnagram(self, s, t):
@@ -7,6 +10,4 @@ class Solution(object):
         :rtype: bool
         """
         # Count sort
-        s_count = Counter(s)
-        t_count = Counter(t)
-        return s_count == t_count
+        return Counter(s) == Counter(t)
