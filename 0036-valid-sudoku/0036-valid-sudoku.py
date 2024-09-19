@@ -1,3 +1,5 @@
+# Time Complexity: O(N^2) = O(81) = O(1)
+# Space Complexity: O(3 * N^2) = O(3 * 9 * 9) = O(243)
 from collections import defaultdict
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
