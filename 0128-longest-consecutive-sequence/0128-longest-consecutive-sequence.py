@@ -1,3 +1,5 @@
+# Time Complexity: O(N)
+# Space Complexity: O(N) if separate set else O(1) if assignment in-place.
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
         numset = set(nums)
