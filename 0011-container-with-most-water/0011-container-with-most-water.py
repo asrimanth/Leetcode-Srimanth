@@ -1,18 +1,18 @@
-class Solution(object):
-    def maxArea(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
-        max_water = 0
-        left = 0
-        right = len(height) - 1
-        
-        while left != right:
-            current_water_vol = min(height[left], height[right]) * (right - left)
-            max_water = max(max_water, current_water_vol)
-            if height[left] > height[right]:
-                right -= 1
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        left, right = 0, len(height)-1
+        max_area = 0
+        while left < right:
+            if height[left] < height[right]:
+                is_left_min = True
+                min_height = height[left]
             else:
+                is_left_min = False
+                min_height = height[right]
+            curr_area = min_height * (right - left)
+            max_area = max(curr_area, max_area)
+            if is_left_min:
                 left += 1
-        return max_water
+            else:
+                right -= 1
+        return max_area
