@@ -1,3 +1,6 @@
+# Time Complexity: O(N)
+# Space Complexity: O(1)
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -22,7 +25,8 @@ class Solution:
             out = out.next
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
-
+        
+        # After all adds, put carry in the final place.
         if carry != 0:
             out.next = ListNode(carry)
             out = out.next
