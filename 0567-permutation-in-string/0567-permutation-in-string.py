@@ -16,8 +16,6 @@ class Solution:
         left = 0
         for right in range(window_len, len(s2)):
             counts[s2[left]] -= 1
-            if s1_map == counts:
-                return True
             counts[s2[right]] += 1
             if s1_map == counts:
                 return True
