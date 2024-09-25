@@ -12,12 +12,12 @@ class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if root is None:
             return 0
-        # fringe = deque([(root, 1)])
-        fringe = [(root, 1)]
+        fringe = deque([(root, 1)])
+        # fringe = [(root, 1)]
         max_depth = -99999
         while len(fringe) != 0:
-            curr, depth = fringe.pop() # DFS
-            # curr, depth = fringe.popleft() # BFS
+            # curr, depth = fringe.pop() # DFS
+            curr, depth = fringe.popleft() # BFS
             if curr.left is None and curr.right is None:
                 max_depth = max(depth, max_depth)
             if curr.left is not None:
