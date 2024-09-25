@@ -1,3 +1,6 @@
+# Time Complexity: O(max(P,Q))
+# Space Compelxity: O(max(P,Q)) for the recursion stack.
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
