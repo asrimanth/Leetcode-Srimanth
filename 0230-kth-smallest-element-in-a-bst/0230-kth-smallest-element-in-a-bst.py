@@ -1,5 +1,5 @@
 # Time Complexity: O(N)
-# Space Complexity: O(N)
+# Space Complexity: O(1)
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -9,12 +9,22 @@
 #         self.right = right
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-        result = []
+        # result = []
+        # def inorder_traversal(node):
+        #     if not node:
+        #         return
+        #     inorder_traversal(node.left)
+        #     result.append(node.val)
+        #     inorder_traversal(node.right)
+
+        self.count = 0
+        self.kth_elem = -1
         def inorder_traversal(node):
             if not node:
                 return
             inorder_traversal(node.left)
-            result.append(node.val)
+            self.count += 1
+            if self.count == k: self.kth_elem = node.val
             inorder_traversal(node.right)
         inorder_traversal(root)
-        return result[k-1]
+        return self.kth_elem
