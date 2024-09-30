@@ -1,34 +1,16 @@
-import math
-class Solution(object):
-    
-    def combination(self, n, r):
-        if r > n:
-            return 0
-        if r == 0 or r == n:
-            return 1
-        return self.combination(n-1, r-1) + self.combination(n-1, r)
-    
-    def generate(self, numRows):
-        """
-        :type numRows: int
-        :rtype: List[List[int]]
-        """
-        result = [[1]]
-        # Brute Force
-        # for n in range(1, numRows):
-        #     binomial_exp=[]
-        #     for r in range(n+1):
-        #         binomial_exp.append(self.combination(n, r))
-        #     result.append(binomial_exp)
-        # return result
-        
-        # DP
-        for n in range(1, numRows):
-            binomial_exp = [result[n-1][0]]
-            for r in range(n-1):
-                new_element = result[n-1][r] + result[n-1][r+1]
-                binomial_exp.append(new_element)
-            binomial_exp.append(result[n-1][-1])
-            result.append(binomial_exp)
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        result = [[1], [1, 1]]
+        if numRows == 1:
+            return result[:1]
+        elif numRows == 2:
+            return result
+        for _ in range(2, numRows):
+            new_row = [1]
+            prev_row = result[-1]
+            for idx in range(1, len(prev_row)):
+                a, b = prev_row[idx-1], prev_row[idx]
+                new_row.append(a+b)
+            new_row.append(1)
+            result.append(new_row)
         return result
-            
