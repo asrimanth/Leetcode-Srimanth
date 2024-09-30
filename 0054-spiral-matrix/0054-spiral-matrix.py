@@ -1,3 +1,5 @@
+# Time Complexity: O(M * N)
+# Space Complexity: O(1) excluding result
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         m, n = len(matrix), len(matrix[0])
@@ -5,8 +7,6 @@ class Solution:
             return []
         result = []
         max_level = m - 1
-        # Rows 0, 1, 2 -> 0, 2, 1
-        # 0, 1, 2, 3 -> 0, 3, 1, 2
 
         row_start, row_end = 0, m-1
         col_start, col_end = 0, n-1
@@ -20,13 +20,6 @@ class Solution:
             for i in range(row_start, row_end+1):
                 result.append(matrix[i][col_end])
             col_end -= 1
-            # for j in range(col_end, col_start-1, -1):
-            #     result.append(matrix[row_end][j])
-            # row_end -= 1
-            # # print(result)
-            # for i in range(row_end, row_start-1, -1):
-            #     result.append(matrix[i][col_start])
-            # col_start += 1
 
             # down -> l1
             if row_start <= row_end:
