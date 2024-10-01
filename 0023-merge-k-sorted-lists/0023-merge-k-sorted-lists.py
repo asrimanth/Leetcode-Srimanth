@@ -3,8 +3,7 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-# Time Complexity: O(N * K)
-# Space Complexity: O(1) excluding result
+
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         if not lists or not len(lists):
@@ -14,8 +13,24 @@ class Solution:
 
         merged_node = lists[0]
 
-        for i in range(1, len(lists)):
-            merged_node = self.merge(merged_node, lists[i])
+        # Time Complexity: O(N * K)
+        # Space Complexity: O(1) excluding result
+        # Less optimized - merge current list with next list
+        # for i in range(1, len(lists)):
+        #     merged_node = self.merge(merged_node, lists[i])
+
+        # Neetcode way
+        # https://www.youtube.com/watch?v=q5a5OiGbT6Q
+        i, j = 0, len(lists)-1
+        while len(lists) > 1:
+            merged_lists = []
+            for i in range(0, len(lists), 2):
+                list1 = lists[i]
+                list2 = lists[i+1] if i+1 < len(lists) else None
+                merged_lists.append(self.merge(list1, list2))
+            lists = merged_lists
+        return lists[0]
+
 
         return merged_node
     
