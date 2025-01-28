@@ -6,7 +6,7 @@ class Solution:
     def my_solution(self, grid: List[List[int]]) -> int:
         """
         Approach: Use DFS for every non-zero cell.
-        Time Complexity: O((M*N)^2)
+        Time Complexity: O(M*N)
         Space Complexity: O(M*N)
         """
         rows, cols = len(grid), len(grid[0])
