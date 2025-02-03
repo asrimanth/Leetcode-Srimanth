@@ -1,7 +1,16 @@
 class Solution:
     def longestMonotonicSubarray(self, nums: List[int]) -> int:
+        return self.my_solution(nums)
+
+    def my_solution(self, nums: List[int]) -> int:
+        """
+        Maintain a list of sequence lengths by passing the array twice.
+        Time Complexity: O(N)
+        Space Complexity: O(N)
+        """
         max_inc, max_dec = 0, 0
         N = len(nums)
+
         # Strictly increasing
         inc_seq_lens = []
         for i in range(N):
