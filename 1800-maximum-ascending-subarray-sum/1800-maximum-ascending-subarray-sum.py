@@ -1,3 +1,6 @@
+# Time Complexity: O(N)
+# Space Complexity: O(1)
+
 class Solution:
     def maxAscendingSum(self, nums: List[int]) -> int:
         N = len(nums)
