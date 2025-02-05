@@ -1,14 +1,8 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        """
-        :type s: str
-        :rtype: int
-        """
-        return self.set_approach(s)
-
-    def set_approach(self, s: str) -> int:
-        # Time Complexity: O(n):
-        # Space Complexity: O(n)
+        # Sliding window approach
+        # Time Complexity: O(N)
+        # Space Complexity: O(N)
         char_set = set()
         left = 0
         max_len = 0
