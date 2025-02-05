@@ -1,3 +1,6 @@
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 use std::collections::HashMap;
 use std::cmp::max;
 impl Solution {
