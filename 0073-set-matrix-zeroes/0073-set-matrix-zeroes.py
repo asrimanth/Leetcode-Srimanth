@@ -3,20 +3,21 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        row_locs = set()
-        col_locs = set()
-        m, n = len(matrix), len(matrix[0])
-        for i in range(m):
-            for j in range(n):
-                if not matrix[i][j]:
-                    row_locs.add(i)
-                    col_locs.add(j)
-
-        for row in row_locs:
-            matrix[row] = [0] * n
-        for col in col_locs:
-            for i in range(m):
-                matrix[i][col] = 0
-
-        return matrix
+        rows_to_zero = set()
+        cols_to_zero = set()
+        rows, cols = len(matrix), len(matrix[0])
+        for i in range(rows):
+            for j in range(cols):
+                if not matrix[i][j] and i not in rows_to_zero:
+                    rows_to_zero.add(i)
+                if not matrix[i][j] and j not in cols_to_zero:
+                    cols_to_zero.add(j)
         
+        for row in rows_to_zero:
+            for j in range(cols):
+                matrix[row][j] = 0
+        for i in range(rows):
+            for col in cols_to_zero:
+                matrix[i][col] = 0
+        
+        return matrix
