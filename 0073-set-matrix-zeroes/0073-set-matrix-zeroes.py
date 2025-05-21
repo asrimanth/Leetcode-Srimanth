@@ -1,3 +1,5 @@
+# Time Complexity: O(M*N)
+# Space Complexity: O(M+N)
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
         """
@@ -8,16 +10,21 @@ class Solution:
         rows, cols = len(matrix), len(matrix[0])
         for i in range(rows):
             for j in range(cols):
-                if not matrix[i][j] and i not in rows_to_zero:
+                if not matrix[i][j]:
                     rows_to_zero.add(i)
-                if not matrix[i][j] and j not in cols_to_zero:
                     cols_to_zero.add(j)
-        
-        for row in rows_to_zero:
-            for j in range(cols):
-                matrix[row][j] = 0
+
+        # for row in rows_to_zero:
+        #     for j in range(cols):
+        #         matrix[row][j] = 0
+        # for i in range(rows):
+        #     for col in cols_to_zero:
+        #         matrix[i][col] = 0
+
+        # Simplified below
         for i in range(rows):
-            for col in cols_to_zero:
-                matrix[i][col] = 0
-        
+            for j in range(cols):
+                if i in rows_to_zero or j in cols_to_zero:
+                    matrix[i][j] = 0
+
         return matrix
