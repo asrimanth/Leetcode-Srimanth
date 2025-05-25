@@ -1,3 +1,5 @@
+# Time Complexity: O(N)
+# Space Complexity: O(N)
 from collections import Counter
 class Solution:
     def longestPalindrome(self, words: List[str]) -> int:
