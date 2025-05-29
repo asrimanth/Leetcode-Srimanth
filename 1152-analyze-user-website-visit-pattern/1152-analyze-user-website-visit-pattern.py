@@ -1,5 +1,5 @@
 # Time Complexity: O(N * log(N)) + O(N * (K^3))
-# Space Complexity: O(N)
+# Space Complexity: O(N + P)
 from collections import defaultdict
 class Solution:
     def mostVisitedPattern(self, username: List[str], timestamp: List[int], website: List[str]) -> List[str]:
@@ -31,5 +31,4 @@ class Solution:
                 result = patt
             elif temp == patt_count: # Equal patterns with largest score
                 result = result if result < patt else patt
-            print(patt, temp)
         return result
