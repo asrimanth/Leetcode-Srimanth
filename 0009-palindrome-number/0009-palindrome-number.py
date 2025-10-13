@@ -1,6 +1,7 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         if x < 0 or (x % 10 == 0 and x != 0):
+            # Handle negative numbers or numbers ending in 0 (except 0 itself)
             return False
         return self.reverse_num(x)
 
