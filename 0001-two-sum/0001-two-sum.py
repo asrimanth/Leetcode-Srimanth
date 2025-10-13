@@ -3,6 +3,8 @@ class Solution:
         return self.hashmap_solution(nums, target)
     
     def hashmap_solution(self, nums: List[int], target: int) -> List[int]:
+        # Time Complexity: O(N)
+        # Space Complexity: O(N)
         n = len(nums)
         hashmap = dict() # num:index is the mapping.
         for i in range(n):
