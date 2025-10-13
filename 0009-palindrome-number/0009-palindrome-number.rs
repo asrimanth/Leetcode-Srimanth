@@ -6,7 +6,8 @@ impl Solution {
     pub fn reverse_num(x: i32) -> bool {
         // Time Complexity: Number of digits in x = O(log10(x))
         // Space Complexity: O(1)
-        if x < 0 {
+        if x < 0 || (x % 10 == 0 && x != 0) {
+            // Handle negative numbers or numbers ending in 0 (except 0 itself)
             return false;
         }
         let mut temp: i32 = x;
@@ -28,7 +29,8 @@ impl Solution {
     pub fn str_approach(x: i32) -> bool {
         // Time Complexity: Number of digits in x = O(log10(x))
         // Space Complexity: O(1)
-        if x < 0 {
+        if x < 0 || (x % 10 == 0 && x != 0) {
+            // Handle negative numbers or numbers ending in 0 (except 0 itself)
             return false;
         }
         let xstr: String = x.to_string();
