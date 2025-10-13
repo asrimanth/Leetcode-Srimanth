@@ -25,7 +25,6 @@ impl Solution {
         }
     }
 
-    
     pub fn str_approach(x: i32) -> bool {
         // Time Complexity: Number of digits in x = O(log10(x))
         // Space Complexity: O(1)
