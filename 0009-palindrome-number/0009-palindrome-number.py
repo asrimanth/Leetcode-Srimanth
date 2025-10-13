@@ -1,22 +1,6 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        return self.two_pointer(x)
-
-    def two_pointer(self, x: int) -> bool:
-        # Time Complexity: Number of digits in x = O(log10(x))
-        # Space Complexity: O(1)
-        if x < 0:
-            return False
-        div = 1
-        while x > 10 * div:
-            div *= 10
-        # Two pointer approach -  div from left and mod from right
-        while x:
-            if x // div != x % 10:
-                return False
-            x = (x % div) // 10
-            div = div / 100
-        return True
+        return self.reverse_num(x)
 
     def reverse_num(self, x: int) -> bool:
         # Time Complexity: Number of digits in x = O(log10(x))
