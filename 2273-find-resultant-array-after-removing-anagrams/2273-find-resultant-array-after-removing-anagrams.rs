@@ -1,14 +1,18 @@
 use std::collections::HashMap;
+
 impl Solution {
     pub fn remove_anagrams(words: Vec<String>) -> Vec<String> {
-        // Time Complexity: O(N * K), K = len(each_word)
-        // Space Complexity: O(N)
+        // Time Complexity: O(N * K), N = len(words), K = len(each_word)
+        // Space Complexity: O(N) for the result list
+        if words.is_empty() {
+            return Vec::new();
+        }
+
         let n = words.len();
         let mut result: Vec<String> = vec![words[0].clone()];
-        let mut i: usize = 1;
 
         for i in 1..n {
-            let last_in_result = result.last().unwrap();
+            let last_in_result = result.last().unwrap(); // Safe unwrap due to initial add and non-empty words
             let curr = &words[i];
             if !Self::are_anagrams_hashmap_2(last_in_result, curr) {
                 result.push(curr.clone());
@@ -33,11 +37,11 @@ impl Solution {
             let count = char_counts.entry(c).or_insert(0);
             *count -= 1;
             if *count < 0 {
-                return false;
+                return false; // Character in string2 not present or too many times
             }
         }
 
-        // Check if remaining elements are non-zero. Return accordingly
+        // Check if remaining elements are non-zero. Return accordingly.
         char_counts.values().all(|&count| count == 0)
     }
 
@@ -69,8 +73,9 @@ impl Solution {
         let mut chars1: Vec<char> = string1.chars().collect();
         let mut chars2: Vec<char> = string2.chars().collect();
 
-        chars1.sort();
-        chars2.sort();
+        // Modified from `sort()` to `sort_unstable()` for potential minor performance.
+        chars1.sort_unstable();
+        chars2.sort_unstable();
 
         return chars1 == chars2;
     }
