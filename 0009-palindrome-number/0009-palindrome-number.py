@@ -1,12 +1,12 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
+        if x < 0 or (x % 10 == 0 and x != 0):
+            return False
         return self.reverse_num(x)
 
     def reverse_num(self, x: int) -> bool:
         # Time Complexity: Number of digits in x = O(log10(x))
         # Space Complexity: O(1)
-        if x < 0:
-            return False
         temp = x
         x_rev = 0
         while temp:
@@ -21,7 +21,5 @@ class Solution:
     def str_approach(self, x: int) -> bool:
         # Time Complexity: Number of digits in x = O(log10(x))
         # Space Complexity: O(1)
-        if x < 0:
-            return False
         x = str(x)
         return x == x[::-1]
