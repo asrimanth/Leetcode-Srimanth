@@ -5,7 +5,6 @@ class Solution:
         n = len(nums)
         prev, curr, result = 0, 1, 0
         for i in range(1, n):
-            print(prev, curr, result)
             if nums[i] > nums[i-1]:
                 curr += 1
             else:
