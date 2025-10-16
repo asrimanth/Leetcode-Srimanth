@@ -1,7 +1,7 @@
 class Solution:
     def maxIncreasingSubarrays(self, nums: list[int]) -> int:
         # Time Complexity: O(N)
-        # Space Complexity: O(N)
+        # Space Complexity: O(1)
         n = len(nums)
         prev, curr, result = 0, 1, 0
         for i in range(1, n):
