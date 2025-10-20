@@ -1,6 +1,8 @@
 use std::collections::HashMap;
 impl Solution {
     pub fn final_value_after_operations(operations: Vec<String>) -> i32 {
+        // Time Complexity: O(N)
+        // Space Complexity: O(1)
         let mut mapping: HashMap<&str, i8> = HashMap::new();
         mapping.insert("++X", 1);
         mapping.insert("X++", 1);
