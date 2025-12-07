@@ -1,7 +1,9 @@
+# Time Complexity: O(N^2)
+# Space Complexity: O(1)
+
 class Solution:
     def threeSumClosest(self, nums: List[int], target: int) -> int:
         nums = sorted(nums)
-        print(nums)
         result = 0
         diff = 9999999999
         n = len(nums)
